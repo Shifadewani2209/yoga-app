@@ -1,242 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cardio Section</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #ffffff;
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
 
-      .navbar {
-        width: 100%;
-        padding: 10px 0;
-        background-color: #148607;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardio Section</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: "Arial", sans-serif;
+      background-color: #222829;
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-      .navbar-text {
-        margin-right: 20px;
-      }
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      padding: 15px 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
 
-      .container {
-        width: 80%;
-        padding: 20px;
-        background-color: #f4f4f4;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border: 2px solid #4caf50;
-        text-align: center;
-        margin-top: 20px;
-      }
+    .navbar h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 20px;
+    }
 
-      h1 {
-        color: #eee8e8;
-        margin-bottom: 30px;
-        font-size: 28px;
-      }
+    .cardio-app-button {
+      margin-right: 20px;
+      padding: 15px 25px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 25px;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
 
+    .cardio-app-button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Container Styles */
+    .container {
+      margin-top: 90px;
+      width: 85%;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #f4f4f4;
+    }
+
+    /* Module Row */
+    .module-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Module Items */
+    .module-item {
+      flex: 1 1 calc(33.33% - 20px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 300px;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .module-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .module-item::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      z-index: 0;
+    }
+
+    .module-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .module-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .module-description {
+      font-size: 16px;
+      color: #cccccc;
+      margin-bottom: 20px;
+    }
+
+    .module-link {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      background: linear-gradient(45deg, #4caf50, #148607);
+      color: #ffffff;
+      border-radius: 25px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .module-link:hover {
+      background: linear-gradient(45deg, #45a049, #0d6105);
+      transform: scale(1.05);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
       .module-row {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        flex-direction: column;
       }
 
       .module-item {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex: 1 1 100%;
+        margin-bottom: 20px;
       }
 
-      .module-image {
-        margin-bottom: 10px;
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .module-link {
-        display: block;
-        margin-top: 10px;
-        padding: 15px 30px;
-        text-decoration: none;
-        color: #333333;
-        background-color: #4caf50;
-        border-radius: 25px;
-        transition: background-color 0.3s ease;
-        width: 200px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
-
-      .module-link:hover {
-        background-color: #45a049;
-      }
-
-      .app-download {
-        margin-top: 30px;
+      .navbar h1 {
         font-size: 20px;
-        color: #333333;
       }
+    }
 
-      .app-download a {
-        margin-top: 10px;
-        padding: 15px 30px;
-        text-decoration: none;
-        color: #ffffff;
-        background-color: #007bff;
-        border-radius: 25px;
-        transition: background-color 0.3s ease;
-        font-size: 18px;
-        font-weight: bold;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
+    .header {
+      background-color: rgba(27, 37, 47, 0.95);
+      color: rgb(30, 178, 178);
+      padding: 0 20px;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
 
-      .app-download a:hover {
-        background-color: #0056b3;
-      }
+    .navbar {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 15px;
+      transition: all 0.3s ease;
+    }
 
-      .cardio-app-button {
-        margin-top: -5px;
-        padding: 20px 30px;
-        background-color: #100f0f; /* Changed to a different color */
-        border: none;
-        border-radius: 8px; /* Square-shaped border-radius */
-        color: #ffffff;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
+    .brand {
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-      .cardio-app-button:hover {
-        background-color: #e03a00; /* Darker color on hover */
-      }
-      .black {
-        color: #000000;
-      }
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-      .cardio-app-button {
-        text-decoration: none;
-      }
-    </style>
-  </head>
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
 
-  <body>
-    <div class="navbar">
-      <span class="navbar-text"
-        ><h1>DOWNLOAD OUR CARDIO APP FOR ANDROID</h1></span
-      >
-      <a
-        href="https://drive.google.com/file/d/10akRuapFdpP6tzke4zwlf_monXGYwkfZ/view"
-        target="_blank"
-        class="cardio-app-button"
-        >CardioApp Download</a
-      >
-    </div>
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: rgb(30, 178, 178);
+      transition: width 0.3s ease;
+    }
 
-    <div class="container">
-      <h1 class="black"><center>Welcome To The Cardio Section</center></h1>
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
 
-      <div class="module-row">
-        <div class="module-item">
-          <img src="assets/squats.avif" alt="Squats" class="module-image" />
-          <a
-            href="SquatsCounter/index.html"
-            class="module-link"
-            id="squatsCounter"
-            >Squats Counter</a
-          >
-        </div>
+<body>
 
-        <div class="module-item">
-          <img src="assets/boxing.avif" alt="Boxing" class="module-image" />
-          <a
-            href="BoxingChallenge/index.html"
-            class="module-link"
-            id="boxingChallenge"
-            >Boxing Challenge</a
-          >
-        </div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="brand">
+        <span class="brand-name">Yog-Guru</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-        <div class="module-item">
-          <img src="assets/pushup.avif" alt="Push-up" class="module-image" />
-          <a href="Pushup/pushup.html" class="module-link" id="Push-up"
-            >Push-up</a
-          >
-        </div>
+  <div class="container">
+    <h1>Welcome To The Cardio Section</h1>
 
-        <div class="module-item">
-          <img src="assets/pullup.avif" alt="Pull-up" class="module-image" />
-          <a href="Pullup/pullup.html" class="module-link" id="Pull-up"
-            >Pull-up</a
-          >
+    <div class="module-row">
+      <div class="module-item" style="background-image: url('assets/squats.avif');">
+        <div class="module-content">
+          <h2 class="module-title">Squats Counter</h2>
+          <p class="module-description">
+            Track your squat count and form for a complete lower-body
+            workout.
+          </p>
+          <a href="SquatsCounter/index.html" class="module-link">Start Now</a>
         </div>
       </div>
 
-      <div class="module-row">
-        <div class="module-item">
-          <img src="assets/skipping.png" alt="Skipping" class="module-image" />
-          <a href="Skipping/skipping.html" class="module-link" id="skipping"
-            >Skipping</a
-          >
+      <div class="module-item" style="background-image: url('assets/boxing.avif');">
+        <div class="module-content">
+          <h2 class="module-title">Boxing Challenge</h2>
+          <p class="module-description">
+            Engage in a fun boxing challenge to boost endurance and strength.
+          </p>
+          <a href="BoxingChallenge/index.html" class="module-link">Start Now</a>
         </div>
+      </div>
 
-        <div class="module-item">
-          <img
-            src="assets/shoulder.jpeg"
-            alt="Shoulderpress"
-            class="module-image"
-          />
-          <a
-            href="Shoulderpress/shoulder.html"
-            class="module-link"
-            id="shoulderpress"
-            >Shoulderpress</a
-          >
-        </div>
-
-        <div class="module-item">
-          <img
-            src="assets/lateral.jpeg"
-            alt="Lateral Raises"
-            class="module-image"
-          />
-          <a
-            href="LateralRaises/lraise.html"
-            class="module-link"
-            id="LateralRaises"
-            >Lateral Raises</a
-          >
-        </div>
-
-        <div class="module-item">
-          <img
-            src="assets/jumping.jpeg"
-            alt="Jumping Jacks"
-            class="module-image"
-          />
-          <a href="JumpingJacks/jj.html" class="module-link" id="JumpingJacks"
-            >Jumping Jacks</a
-          >
+      <div class="module-item" style="background-image: url('assets/pushup.avif');">
+        <div class="module-content">
+          <h2 class="module-title">Push-up Tracker</h2>
+          <p class="module-description">
+            Perfect your push-ups and build upper-body strength with ease.
+          </p>
+          <a href="Pushup/pushup.html" class="module-link">Start Now</a>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

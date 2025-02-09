@@ -38,6 +38,24 @@ let cur_fps = 1;
 
 const fpsControl = new window.FPS();
 
+
+video.addEventListener("loadedmetadata", () => {
+  // Get the video dimensions and maintain aspect ratio
+  const videoRatio = video.videoWidth / video.videoHeight;
+  const canvasRatio = canvas.width / canvas.height;
+
+  if (videoRatio > canvasRatio) {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoWidth / videoRatio;
+  } else {
+    canvas.height = video.videoHeight;
+    canvas.width = video.videoHeight * videoRatio;
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  draw();
+});
+
 function onResults(results) {
   if (!results.poseLandmarks) {
     return;
@@ -115,8 +133,8 @@ function startGame() {
 var myGameArea = {
   canvas: document.createElement("canvas"),
   start: function () {
-    this.canvas.width = 480;
-    this.canvas.height = 270;
+    this.canvas.width = 1920;
+    this.canvas.height = 1080;
     this.context = this.canvas.getContext("2d");
     document.body.insertBefore(this.canvas, document.body.childNodes[0]);
     this.interval = setInterval(updateGameArea, 20);

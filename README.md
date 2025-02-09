@@ -2,7 +2,7 @@
 
 In today's fast-paced world, maintaining a healthy lifestyle can often feel like a
 daunting task. Yog-Guru, a groundbreaking web-based application, aims to simplify
-and enhance the journey towards physical and mental well-being through the power
+and enhance the journey towards physical and mental well-being through the powern
 of artificial intelligence (AI) and machine learning (ML).
 
 

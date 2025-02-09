@@ -51,3 +51,89 @@ p2 {
     --text-content: "Loading";
   }
 }
+
+html,
+body {
+  overflow: hidden;
+  background-color: #222829; /* Dark theme for a sleek look */
+  font-family: "Poppins", sans-serif; /* Modern font */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Keep the canvas styling as is */
+video {
+  display: none;
+}
+
+canvas,
+h1 {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  height: 90%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+}
+
+/* Modern Loading Animation */
+h1 {
+  color: #f8f9fa;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1::before {
+  content: var(--text-content);
+  animation: text-animate 1s linear infinite;
+}
+
+/* Score & Counter Styling */
+p1 {
+  font-size: 40px;
+  color: #ffcc00; /* Bright yellow for visibility */
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.5);
+}
+
+p2 {
+  font-size: 59px;
+  color: #00eaff; /* Neon blue */
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 234, 255, 0.6);
+}
+
+/* Smooth Text Animation */
+@keyframes text-animate {
+  0% {
+    --text-content: "Loading.";
+  }
+  33% {
+    --text-content: "Loading..";
+  }
+  66% {
+    --text-content: "Loading...";
+  }
+  100% {
+    --text-content: "Loading";
+  }
+}
+
+/* Subtle Fade-in Effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

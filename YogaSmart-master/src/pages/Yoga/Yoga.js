@@ -47,7 +47,7 @@ function Yoga() {
           <Link to="/yoga">Start Pose</Link>
         </button>
         <button className="secondary-btn">
-          <Link to="/">Home</Link>
+          <Link to="http://127.0.0.1:5500/index.html">Home</Link>
         </button>
       </div>
     </div>

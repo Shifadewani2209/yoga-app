@@ -1,88 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yog-Guru</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
-        <header>
+        <header class="header">
             <nav class="navbar">
-                <div class="brand">Yog-Guru</div>
+                <div class="brand">
+                    <img src="assets/favicon.png" alt="Yog-Guru Logo" class="brand-logo">
+                    <span class="brand-name">Yog-Guru</span>
+                </div>
                 <div class="nav-links">
-                    <a href="home.html">Home</a>
-                    <a href="aboutus.html">About</a>
-                    <a href="index.html">Login</a>
+                    <a href="#features">Features</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </nav>
         </header>
         <main>
-            <div class="video-container">
+            <div class="video-container fade-in">
                 <video src="assets/benefit.mp4" autoplay muted loop></video>
+                <div class="overlay">
+                    <img src="assets/favicon.png" alt="Yog-Guru" class="hero-logo">
+                    <h1>Welcome to Yog-Guru</h1>
+                    <p>Transform Your Life Through Yoga</p>
+                </div>
             </div>
-            <div class="image-section">
-                <div class="image-tab">
-                    <img src="assets/image1.jpg" alt="Image 1" id="imageLink">
-                    <button id="button1">Pose detector</button>
-                </div>
-                
-                <div class="image-tab">
-                    <a href="PoseCorrector/entry.html">
-                        <img src="assets/image2.jpg" alt="Image 5">
-                    </a>
-                    <a href="PoseCorrector/entry.html">
-                        <button id="button2">Pose corrector</button>
-                    </a>
-                </div>
-                
-                <div class="image-tab">
-                    <a href="Cardio/index.html">
+
+            <section id="features" class="features-section fade-in">
+                <h2 class="section-title">Our Features</h2>
+                <div class="image-section">
+                    <div class="image-tab fade-in-element">
+                        <img src="assets/image1.jpg" alt="Image 1">
+                        <h3>Real-time Pose Detection</h3>
+                        <p>Get instant feedback on your yoga poses</p>
+                        <button onclick="location.href='http://localhost:3000/'">Pose Detector</button>
+                    </div>
+
+                    <div class="image-tab fade-in-element">
+                        <img src="assets/image2.jpg" alt="Image 2">
+                        <h3>Advanced Pose Correction</h3>
+                        <p>Perfect your form with AI-powered guidance</p>
+                        <button onclick="location.href='http://localhost:5500/PoseCorrector/entry.html'">Pose
+                            Corrector</button>
+                    </div>
+
+                    <div class="image-tab fade-in-element">
                         <img src="assets/image5.jpg" alt="Image 5">
-                    </a>
-                    <a href="Cardio/index.html">
-                        <button id="button5">Cardio</button>
-                    </a>
-                    
+                        <h3>Cardio Workouts</h3>
+                        <p>Enhance your cardiovascular health</p>
+                        <button onclick="location.href='http://localhost:5500/Cardio/index.html'">Cardio</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="services-section">
+                <h2 class="section-title">Our Services</h2>
+                <div class="service-item fade-in-element">
+                    <div class="service-image">
+                        <img src="assets/medi.png" alt="Meditation">
+                    </div>
+                    <div class="service-info">
+                        <h2>Meditation</h2>
+                        <p>Discover inner peace and mindfulness through our guided meditation sessions. Our expert-led
+                            programs help you reduce stress, improve focus, and achieve mental clarity.</p>
+                        <ul class="service-features">
+                            <li>Guided meditation sessions</li>
+                            <li>Breathing exercises</li>
+                            <li>Stress reduction techniques</li>
+                        </ul>
+                        <button onclick="location.href='Meditation-Motion-Detection/index.html'">Start
+                            Meditation</button>
+                    </div>
                 </div>
 
-                <div class="image-tab">
-                    <a href="Meditation-Motion-Detection/index.html">
-                        <img src="assets/medi.png" alt="Image 4">
-                    </a>
-                    <a href="Meditation-Motion-Detection/index.html">
-                        <button id="button4">Meditation</button>
-                    </a>
+                <div class="service-item fade-in-element">
+                    <div class="service-info">
+                        <h2>Physical Health</h2>
+                        <p>Transform your body and improve your overall physical wellbeing with our comprehensive
+                            fitness programs. Experience personalized workout plans and expert guidance.</p>
+                        <ul class="service-features">
+                            <li>Customized workout plans</li>
+                            <li>Progress tracking</li>
+                            <li>Expert guidance</li>
+                        </ul>
+                        <button onclick="location.href='Physical-health/index.html'">Explore Programs</button>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/image4.jpg" alt="Physical Health">
+                    </div>
                 </div>
 
-                <div class="image-tab">
-                    <a href="Physical-health/index.html">
-                        <img src="assets/image4.jpg" alt="Image 4">
-                    </a>
-                    <a href="Physical-health/index.html">
-                        <button id="button4">Physical-Health</button>
-                    </a>
+                <div class="service-item fade-in-element">
+                    <div class="service-image">
+                        <img src="assets/image6.png" alt="Mental Health">
+                    </div>
+                    <div class="service-info">
+                        <h2>Mental Health</h2>
+                        <p>Focus on your mental wellness with our specialized programs designed to help you achieve
+                            emotional balance and inner peace. Join our supportive community.</p>
+                        <ul class="service-features">
+                            <li>Mental wellness exercises</li>
+                            <li>Stress management</li>
+                            <li>Emotional balance techniques</li>
+                        </ul>
+                        <button onclick="location.href='mental-health/index.html'">Begin Journey</button>
+                    </div>
                 </div>
-                
-                <div class="image-tab">
-                    <a href="mental-health/index.html">
-                        <img src="assets/image6.png" alt="Image 6">
-                    </a>
-                    <a href="mental-health/index.html">
-                        <button id="button6">Mental-Health</button>
-                    </a>
-                </div>                
-            </div>
+            </section>
+
+            <section id="about" class="about-section fade-in-element">
+                <div class="video-background">
+                    <video autoplay muted loop playsinline>
+                        <source src="assets/videoplayback.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="content-overlay">
+                    <h2 class="section-title">About Yog-Guru</h2>
+                    <div class="about-container">
+                        <div class="about-image">
+                        </div>
+                        <div class="about-content">
+                            <h3>Transforming Lives Through Yoga</h3>
+                            <p class="highlight-text">
+                                Discover the perfect harmony of traditional wisdom and modern technology
+                            </p>
+                            <div class="about-features">
+                                <div class="feature-item">
+                                    <span class="feature-number">24/7</span>
+                                    <span class="feature-text">Availabe</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-number">10+</span>
+                                    <span class="feature-text">Curated Exercies</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-number">5+</span>
+                                    <span class="feature-text">Yoga Programs</span>
+                                </div>
+                            </div>
+                            <p class="about-description">
+                                At Yog-Guru, we believe in making authentic yoga accessible to everyone. Our platform
+                                combines ancient yogic wisdom with cutting-edge technology to provide personalized
+                                guidance for your wellness journey.
+                            </p>
+                            <button class="learn-more-btn" onclick="location.href='http://localhost:5500/aboutus.html'">
+                                Learn More About Us
+                                <span class="arrow">→</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="developed-by">
+                <h2>Developed By</h2>
+                <div class="team-container">
+                    <div class="team-member">
+                        <h3>Shifa</h3>
+                        <p>AI & ML Development</p>
+                    </div>
+
+                    <div class="team-member">
+                        <h3>Shravani</h3>
+                        <p>Front-end & Webpage</p>
+                    </div>
+
+                    <div class="team-member">
+                        <h3>Shreyas</h3>
+                        <p>Domain Research</p>
+                    </div>
+
+                    <div class="team-member">
+                        <h3>Priyanshu</h3>
+                        <p>Backend Development</p>
+                    </div>
+                </div>
+            </section>
         </main>
-        
+
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Yog-Guru</h3>
+                    <p>Transforming lives through the perfect blend of traditional yoga and modern technology.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li>📍 DYPIMER, Akurdi, Pune, 431005 </li>
+                        <li>📞 +91 123-456-7890</li>
+                        <li>✉️ yog-guru1721@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Yog-Guru. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-    <script>
-        const button1 = document.getElementById('button1');
-    
-        button1.addEventListener('click', function() {
-            window.location.href = 'http://localhost:3000/';
-        });
-    </script>
+    <script src="animations.js"></script>
 </body>
+
 </html>

@@ -48,9 +48,23 @@ function askQuestion(questionObject) {
 // Records which response option the user selected and asks the next question if there is a next question to be asked, otherwise shows results.
 function handleResponse(event) {
     let elementClicked = event.target; // returns the list element "<li>3</li>" that was clicked on
-    
-    // Record user selection.
-    let questionObject;
+
+    let nextBtn = document.getElementById("next-btn");
+    nextBtn.innerText = "Next";
+    nextBtn.style.display = "none"; // Initially hidden
+    nextBtn.style.marginTop = "10px";
+    nextBtn.style.marginBottom = "16px";
+    nextBtn.style.marginRight = "30%";
+    nextBtn.style.padding = "10px 20px";
+    nextBtn.style.border = "none";
+    nextBtn.style.borderRadius = "5px";
+    nextBtn.style.backgroundColor = "#007BFF";
+    nextBtn.style.color = "white";
+    nextBtn.style.fontSize = "16px";
+    nextBtn.style.cursor = "pointer";
+
+    // Add event listener
+    nextBtn.addEventListener("click", askNextQuestion);
 
     // Find the questionObject that corresponds to the question the user responded to.
     for (i = 0; i < questionObjects.length; i++) {
@@ -64,7 +78,7 @@ function handleResponse(event) {
         document.getElementsByTagName("ul")[0].removeEventListener("click", handleResponse);
         getResults();
     } else {
-        askNextQuestion();
+        document.getElementById("next-btn").style.display = "block";
     }
 }
 

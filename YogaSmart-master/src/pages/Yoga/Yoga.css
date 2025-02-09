@@ -1,5 +1,6 @@
-.yoga-container {
-    background-image: linear-gradient(to right, red 0%, yellow 100%);
+/* 🌟 Background Styling */
+.yoga-container, .yoga-pose-container {
+    background: linear-gradient(to right, #0b133a, #262041);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -7,58 +8,60 @@
     min-width: 100vw;
     min-height: 100vh;
     overflow: hidden;
-}
-.yoga-pose-container {
-    background-image: linear-gradient(to right, red 0%, yellow 100%);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-    min-width: 100vw;
-    min-height: 100vh;
-    overflow: hidden;
+    padding: 20px;
 }
 
+/* 🎨 Button Styling */
 .secondary-btn {
     text-decoration: none;
     display: flex;
-    justify-self: center;
-    align-self: center;
-    margin: 10px auto 10px auto;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border-color: rgba(125, 125, 125, 0.1);
-    border-width: 5px;
-    background-color: rgba(0, 0, 0,0.2);
-    box-shadow: 0px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+    margin: 15px auto;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
-.secondary-btn a{
-text-decoration: none;
-color:white;
+
+.secondary-btn a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease-in-out;
 }
 
 .secondary-btn:hover {
-    background-color: rgba(0, 0, 0,0.4);
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
 }
 
-.secondary-btn:hover a{
-    color:black;
+.secondary-btn:hover a {
+    color: yellow;
 }
 
+/* ⏳ Countdown Timer */
 .starting-contdown {
     margin: auto;
-    border: 10px solid rgba(125, 125, 125, 0.5);
-    width: max-content;
-    padding: 10px 30px;
+    border: 10px solid rgba(255, 255, 255, 0.7);
+    width: fit-content;
+    padding: 20px 40px;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0);
-    position: relative;
-    top: 45%;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
+
 .starting-contdown h1 {
     color: white;
+    font-size: 48px;
+    font-weight: bold;
 }
+
+/* 🏋️‍♂️ Pose Image Styling */
 .pose-img {
     display: flex;
     justify-content: center;
@@ -66,55 +69,74 @@ color:white;
     width: 50%;
     aspect-ratio: 1;
 }
-.pose-img img{
-    width: 300px;
 
+.pose-img img {
+    width: 50%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
 }
 
+.pose-img img:hover {
+    transform: scale(1.1);
+}
+
+/* 📊 Performance Section */
 .performance-container {
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .pose-performance {
-    margin: 10px 10px;
-    background-color: white;
+    margin: 10px;
+    background: white;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
+
+.pose-performance:hover {
+    transform: scale(1.05);
+}
+
 .pose-performance h4 {
-    color: rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
 }
 
-#webcam {
+/* 🎥 Webcam & Canvas */
+#webcam, #my-canvas {
     transform: rotateY(180deg);
-    padding: "0px";
-    position: relative;
-    
-}
-
-#my-canvas {
-    transform: rotateY(180deg);
-    z-index: 1;
     position: absolute;
-    top:0;
-    left:20;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-.yoga-top{
+/* 🏆 Top Section */
+.yoga-top {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    width: 100%;
+    padding: 15px;
 }
 
-.yoga-top-logo{
-    width: 100px;
-    margin-right: 30%;
+.yoga-top-logo {
+    width: 1px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.pose-detection{
+.yoga-top-logo:hover {
+    transform: rotate(10deg);
+}
+
+/* 📡 Pose Detection */
+.pose-detection {
     display: flex;
     width: 100%;
     position: relative;
@@ -122,41 +144,61 @@ color:white;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-        transform: translateY(-50px);
+    transform: translateY(-30px);
 }
 
-.detection-container{
+.detection-container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:50%;
+    width: 50%;
+    transform: translateY(-250px);
 }
 
-.button-container{
+/* 🎯 Button Container */
+.button-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-@media screen and (max-width: 768px){
-    .yoga-top-logo{
+/* 📱 Responsive Design */
+@media screen and (max-width: 768px) {
+    .yoga-top-logo {
         margin-right: 0;
         width: 80px;
     }
-    .pose-detection{
+
+    .pose-detection {
         flex-direction: column;
         justify-content: space-between;
         transform: translateY(0);
     }
-    .detection-container{
+
+    .detection-container {
         justify-content: space-evenly;
+        width: 100%;
     }
-    .performance-container{
-        display: flex;
+
+    .performance-container {
         flex-direction: column-reverse;
     }
-    
+
+    .pose-img img {
+        width: 200px;
+    }
+
+    .starting-contdown {
+        padding: 15px 30px;
+        font-size: 24px;
+    }
+
+    .secondary-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
 }
