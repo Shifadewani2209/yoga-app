@@ -1,3 +1,7 @@
+<img width="582" height="317" alt="image" src="https://github.com/user-attachments/assets/934b297a-1b07-4b33-b7be-b38b4057be0b" />
+<img width="543" height="303" alt="image" src="https://github.com/user-attachments/assets/6d7ddb55-d57d-4a05-952c-7d48a775fb88" />
+
+
 # Yog-Guru - Yoga Pose Detection And Correction System using Machile Learning
 
 In today's fast-paced world, maintaining a healthy lifestyle can often feel like a
